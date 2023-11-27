@@ -6,12 +6,13 @@ import LoginPage from './components/LoginPage';
 
 const App = () => {
   return (
-<Router>
-    <Routes>
-      <Route exact path='/' element={<LoginPage/>} />
-      <Route exact path='/codeeditor' element={<CodeEditor/>}/>
-    </Routes>
-</Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        {/* Use a route parameter to capture the room ID */}
+        <Route path="/codeeditor/:roomId" element={<CodeEditor />} />
+      </Routes>
+    </Router>
   );
 }
 

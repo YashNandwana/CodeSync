@@ -1,5 +1,6 @@
 /* global ace */ // eslint-disable-line no-unused-vars
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/worker-javascript';
 import 'ace-builds/src-noconflict/ace';
@@ -20,6 +21,8 @@ const GPT_KEY = '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';
 var stompClient = null;
 
 const CodeEditor = () => {
+  const { roomId } = useParams();
+  const { username } = useParams();
   const [code, setCode] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('javascript');
   const [input, setInput] = useState('');
@@ -34,7 +37,7 @@ const CodeEditor = () => {
   }
   const onConnected = () => {
     console.log("connected");
-    stompClient.subscribe('/editor/code-updates', onCodeUpdate);
+    stompClient.subscribe('/editor/code-updates/' + roomId, onCodeUpdate);
     console.log("subscribed");
   }
   const onError = (err) => {
@@ -43,7 +46,6 @@ const CodeEditor = () => {
 
   const onCodeUpdate = (code) => {
     const content = code.body; // Assuming the message body contains the actual content
-
     // Handle the content as needed
     console.log("Received code update:", content);
     setCode(content); 
@@ -65,9 +67,14 @@ const CodeEditor = () => {
     };
   }, []);
   const handleCodeChange = (newCode) => {
+    const payload = {
+      roomId: roomId,
+      username: username,
+      code: newCode,
+    };
     // setCode(newCode); 
     if (stompClient && stompClient.connected) {
-      stompClient.send('/app/update-code', {}, newCode);
+      stompClient.send('/app/update-code', {}, JSON.stringify(payload));
     } else {
       console.log("CLIENT NOT CONNECTED");
     }
@@ -85,7 +92,7 @@ const CodeEditor = () => {
   const getLanguageId = (language) => {
     const languageMap = {
       javascript: 63,
-      c_cpp: 50,
+      c_cpp: 54,
       java: 62,
       python: 71,
     };
@@ -105,7 +112,7 @@ const CodeEditor = () => {
         headers: {
           'Content-Type': 'application/json',
           'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
-          'X-RapidAPI-Key': '80bdee495emshba92524851b5f8dp199da9jsn8d472064a854', // Replace with your RapidAPI key
+          'X-RapidAPI-Key': '80bdee495emshba92524851b5f8dp199da9jsn8d472064a854',
         },
       });
       let token = submissionResponse.data.token;

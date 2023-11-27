@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
 import './LoginPage.css'; // Importing the corresponding CSS file
 import { useNavigate } from 'react-router-dom';
+import { set } from 'ace-builds/src-noconflict/ace';
 
 function LoginPage() {
   const [roomId, setRoomId] = useState('');
   const [username, setUsername] = useState('')
   const navigate = useNavigate();
+  let allIds = new Set();
 
-
+  function generateId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let result = '';
+    while (allIds.has(result) || result === '') { 
+      let counter = 0;
+      while (counter < 10) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+      }
+    }
+    allIds.add(result);
+    return result;
+  }
   function handleJoinClick() {
     // Handle join logic here, e.g., navigate to the room with roomId and username
+    if (roomId === '' || allIds.has(roomId) === false) {
+      alert("Please enter a valid room ID or create a new room");
+      return;
+    }
     console.log(`Joining room ${roomId} as ${username}`);
-    navigate("/codeeditor");
+    navigate("/codeeditor/" + roomId);
   };
 
   return (
@@ -38,7 +57,7 @@ function LoginPage() {
         <button onClick={handleJoinClick}>Join</button>
       </div>
       <div className="create-room-container">
-        <p>If you don't have an invite, then create a <a href="/new-room">new room</a>.</p>
+        <p>If you don't have an invite, then create a <a href={`/codeeditor/${generateId()}`}>new room</a>.</p>
         {/* Add logic or a link to create a new room */}
       </div>
 
