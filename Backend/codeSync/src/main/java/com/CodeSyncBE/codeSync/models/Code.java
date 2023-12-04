@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Code {
-    private String username, code, roomId;
+    private String username, code, roomId, messageId;
 }

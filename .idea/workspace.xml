@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98093e6c-13be-4d91-9766-1889c5bba5c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/codeSync/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/codeSync/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/codeSync/src/main/java/com/CodeSyncBE/codeSync/Controllers/WebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/codeSync/src/main/java/com/CodeSyncBE/codeSync/Controllers/WebSocketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/codeSync/src/main/java/com/CodeSyncBE/codeSync/models/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/codeSync/src/main/java/com/CodeSyncBE/codeSync/models/Code.java" afterDir="false" />
     </list>

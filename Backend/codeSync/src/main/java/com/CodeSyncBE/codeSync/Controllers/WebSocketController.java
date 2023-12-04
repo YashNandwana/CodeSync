@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class WebSocketController {
     private final SimpMessagingTemplate messagingTemplate;
@@ -19,11 +22,15 @@ public class WebSocketController {
         this.messagingTemplate = messagingTemplate;
     }
     private static final Logger logger = LoggerFactory.getLogger(WebSocketController.class);
+    List<Code> recievedPayloads = new ArrayList<>();
+
     @MessageMapping("/update-code")
     public void handleCodeUpdate(@Payload Code payload) {
         String roomId = payload.getRoomId();
         String username = payload.getUsername();
         String code = payload.getCode();
+        String messageId = payload.getMessageId();
+        recievedPayloads.add(payload);
         logger.info(roomId);
         logger.info(code);
         String destination = "/editor/code-updates/" + roomId;
