@@ -5,7 +5,7 @@ CodeSync is a collaborative coding platform that allows users to edit code toget
 ## Features
 
 - Real-time collaborative code editing with syntax highlighting.
-- Code execution using Judge0 API.
+- Code execution using Judge0.
 - AI-powered bug suggestions and code completion.
 - Room-based collaboration for multiple teams.
 
