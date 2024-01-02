@@ -1,4 +1,4 @@
-package com.CodeSyncBE.codeSync.models;
+package com.CodeSyncBE.codeSync.Models;
 
 import lombok.Getter;
 import lombok.Setter;

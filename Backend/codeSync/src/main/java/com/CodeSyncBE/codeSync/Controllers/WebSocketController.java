@@ -1,14 +1,10 @@
 package com.CodeSyncBE.codeSync.Controllers;
 
-import com.CodeSyncBE.codeSync.models.Code;
-import com.CodeSyncBE.codeSync.models.WebRtcPayload;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.CodeSyncBE.codeSync.Models.Code;
+import com.CodeSyncBE.codeSync.Models.WebRtcPayload;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

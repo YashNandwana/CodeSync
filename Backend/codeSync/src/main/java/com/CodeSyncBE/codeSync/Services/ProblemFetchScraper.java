@@ -1,7 +1,7 @@
-package com.CodeSyncBE.codeSync;
+package com.CodeSyncBE.codeSync.Services;
 
 import com.CodeSyncBE.codeSync.Controllers.WebSocketController;
-import com.CodeSyncBE.codeSync.models.ProblemData;
+import com.CodeSyncBE.codeSync.Models.ProblemData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
