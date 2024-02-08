@@ -17,7 +17,7 @@ import SockJS from 'sockjs-client'
 
 import './CodeEditor.css';
 
-const GPT_KEY = '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';
+const GPT_KEY = 'TODO: PUT IN BE';
 var stompClient = null;
 
 const CodeEditor = () => {
@@ -112,7 +112,7 @@ const CodeEditor = () => {
         headers: {
           'Content-Type': 'application/json',
           'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
-          'X-RapidAPI-Key': '80bdee495emshba92524851b5f8dp199da9jsn8d472064a854',
+          'X-RapidAPI-Key': 'TODO: PUT IN BE',
         },
       });
       let token = submissionResponse.data.token;
