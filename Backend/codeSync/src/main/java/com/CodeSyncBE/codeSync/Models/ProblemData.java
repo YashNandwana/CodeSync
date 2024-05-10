@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProblemData {
-    String title, description;
+    private String title, description;
 }
