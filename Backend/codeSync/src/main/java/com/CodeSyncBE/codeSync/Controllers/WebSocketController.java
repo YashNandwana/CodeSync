@@ -1,9 +1,13 @@
 package com.CodeSyncBE.codeSync.Controllers;
 
 import com.CodeSyncBE.codeSync.Models.Code;
+import com.CodeSyncBE.codeSync.Models.Message;
 import com.CodeSyncBE.codeSync.Models.WebRtcPayload;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.json.JSONObject;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
@@ -29,21 +33,19 @@ public class WebSocketController {
         String code = payload.getCode();
         String messageId = payload.getMessageId();
         recievedPayloads.add(payload);
-        if (code.equals("yash")) {
-            if (recievedPayloads.size() > 1) {
-                code = recievedPayloads.get(recievedPayloads.size() - 2).getCode();
-            }
-        }
         logger.info(roomId);
         logger.info(code);
         String destination = "/editor/code-updates/" + roomId;
         messagingTemplate.convertAndSend(destination, code);
     }
 
-    @MessageMapping("/webrtc-signal")
-    public void handleWebRTCSignal(@Payload WebRtcPayload signalPayload) {
-        String roomId = signalPayload.getRoomId();
-        messagingTemplate.convertAndSend("/editor/webrtc-signal/" + roomId, signalPayload.getSignalData());
-    }
+    @MessageMapping("/chat-messages")
+    public void handleChatMessages(@Payload Message payload) {
+        String roomId = payload.getRoomId();
+        String username = payload.getUsername();
+        String message = payload.getMessage();
+        String destination = "/chatroom/messages/" + roomId;
+        messagingTemplate.convertAndSend(destination, message);
 
+    }
 }

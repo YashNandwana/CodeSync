@@ -22,16 +22,17 @@ public class ProblemFetchScraper {
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
+        Thread.sleep(5000);
         // Log the exact HTML content
         String htmlContent = response.body();
         Document doc = Jsoup.parse(htmlContent);
+        logger.info(String.valueOf(doc));
 
         String title = doc.title();
 
         Element descriptionElement = doc.select("meta[name=description]").first();
         String description = (descriptionElement != null) ? descriptionElement.attr("content") : "";
-
+        logger.info(description);
         ProblemData problemData = new ProblemData();
         problemData.setTitle(title);
         problemData.setDescription(description);
