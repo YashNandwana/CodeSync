@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98093e6c-13be-4d91-9766-1889c5bba5c0" name="Changes" comment="FE seperated" />
+    <list default="true" id="98093e6c-13be-4d91-9766-1889c5bba5c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/CodeSyncApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Configuration/SeleniumConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Configuration/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Controllers/AiHelpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Controllers/ProblemFetcherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Controllers/WebSocketController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/AI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/Code.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/ProblemData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/Prompt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Models/WebRtcPayload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Services/AiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/main/java/com/CodeSyncBE/codeSync/Services/ProblemFetchScraper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codeSync/src/test/java/com/CodeSyncBE/codeSync/CodeSyncApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +36,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "YashNandwana"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/YashNandwana/CodeSync.git",
@@ -39,6 +68,11 @@
     "last_opened_file_path": "/Users/tripodkappa/Desktop/Projects/CodeSync/CodeSync"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/codeSync" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="CodeSyncApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.CodeSyncBE.codeSync.CodeSyncApplication" />
